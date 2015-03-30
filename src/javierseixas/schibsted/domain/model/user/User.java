@@ -32,4 +32,9 @@ public class User {
         }
         return false;
     }
+
+    public Role firstRole() {
+        List<Role> rolesList = Arrays.asList(roles);
+        return rolesList.get(0);
+    }
 }

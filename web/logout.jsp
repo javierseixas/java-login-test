@@ -1,1 +1,1 @@
-<div style="text-align: right"><a href="/logout">Logout</a></div>
+<div><a href="/logout">Logout</a></div>

@@ -4,14 +4,6 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
     <servlet>
-        <servlet-name>TestNoAnn</servlet-name>
-        <servlet-class>javierseixas.schibsted.TestNoAnn</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>TestNoAnn</servlet-name>
-        <url-pattern>/test-no-annotation</url-pattern>
-    </servlet-mapping>
-    <servlet>
         <servlet-name>Login</servlet-name>
         <servlet-class>javierseixas.schibsted.infrastructure.controller.Login</servlet-class>
     </servlet>

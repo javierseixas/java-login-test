@@ -12,20 +12,13 @@ public class LoginUser {
         userRepository = inMemoryUserRepository;
     }
 
-    public boolean authenticate(String username, String password) {
+    public User authenticate(String username, String password) {
 
         try {
-            User user = userRepository.findUserByUsernameAndPassword(username, password);
-            return true;
-        } catch (UserNotFoundException e) {
-            return false;
+            return userRepository.findUserByUsernameAndPassword(username, password);
+        } catch (UserNotFoundException exception) {
+            return null;
         }
 
-
-//        if (password == null || password.trim() == "") {
-//            return false;
-//        }
-
-//        return true;
     }
 }

@@ -11,6 +11,6 @@
     <title></title>
   </head>
   <body>
-  hello index
+  <a href="/login">login</a>
   </body>
 </html>

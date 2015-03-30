@@ -4,6 +4,13 @@
     <title>Login Page</title>
 </head>
 <body>
+<div style="color:#ff0000;">
+  <%
+  if (request.getAttribute("loginError") != null) {
+  %>
+  <%= request.getAttribute("loginError") %>
+  <% } %>
+</div>
 <form action="/login" method="post">
   <fieldset>
     <div>Username: <input type="text" name="username" /></div>
