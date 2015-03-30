@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class Login extends HttpServlet {
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String username, password;
@@ -27,15 +28,9 @@ public class Login extends HttpServlet {
 
         User user = loginUserService.authenticate(username, password);
 
-        // Session
-
-        HttpSession session = request.getSession();
-        session.setAttribute("user", user);
-        session.setMaxInactiveInterval(5*60);
-
         if (user != null) {
 
-            request.getSession().setAttribute("user", user);
+            createSession(request, user);
 
             response.sendRedirect("/restricted/" + user.firstRole().roleName() + ".jsp");
             return;
@@ -44,6 +39,13 @@ public class Login extends HttpServlet {
         request.setAttribute("loginError", "User not valid.");
         request.getRequestDispatcher("/login.jsp").forward(request, response);
 
+    }
+
+    // TODO This session stuff should be extracted to a new class
+    private void createSession(HttpServletRequest request, User user) {
+        HttpSession session = request.getSession();
+        session.setAttribute("user", user);
+        session.setMaxInactiveInterval(5*60);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
