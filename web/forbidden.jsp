@@ -4,6 +4,6 @@
     <title></title>
   </head>
   <body>
-  <a href="/login">login</a>
+  <h1>Forbidden</h1>
   </body>
 </html>

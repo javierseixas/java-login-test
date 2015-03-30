@@ -19,6 +19,7 @@ public class InMemoryUserRepository implements UserRepository {
         users.add(new User("user1", "pass1", new Role[] {new Role("page1", "page1")}));
         users.add(new User("user2", "pass2", new Role[] {new Role("page2", "page2")}));
         users.add(new User("user3", "pass3", new Role[] {new Role("page3", "page3")}));
+        users.add(new User("user4", "pass4", new Role[] {new Role("page1", "page1"), new Role("page3", "page3")}));
     }
 
     @Override

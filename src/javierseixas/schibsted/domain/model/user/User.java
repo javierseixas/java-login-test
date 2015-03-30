@@ -1,7 +1,6 @@
 package javierseixas.schibsted.domain.model.user;
 
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 
 public class User {
@@ -24,12 +23,12 @@ public class User {
 
     public boolean hasRole(String role) {
         List<Role> rolesList = Arrays.asList(roles);
-        Iterator<Role> iterator = rolesList.iterator();
-        while (iterator.hasNext()) {
-            if (iterator.next().roleName() == role) {
+        for (int i = 0; i < rolesList.size(); i++) {
+            if (rolesList.get(i).pageKey().equals(role)) {
                 return true;
             }
         }
+
         return false;
     }
 
